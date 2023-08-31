@@ -1,6 +1,7 @@
 import datetime
 from sgp4.earth_gravity import wgs84
 from sgp4.io import twoline2rv
+import pyproj
 
 # Read TLE data from the file
 tle_file_path = '30sate.txt'
@@ -44,6 +45,40 @@ while current_time <= end_time:
 
 
 
+
+def ecef_to_lla(pos_x, pos_y, pos_z):
+    ecef = pyproj.Proj(proj="geocent", ellps="WGS84", datum="WGS84")
+    lla = pyproj.Proj(proj="latlong", ellps="WGS84", datum="WGS84")
+    lon, lat, alt = pyproj.transform(ecef, lla, pos_x, pos_y, pos_z, radians=False)
+    return lat, lon, alt
+
+# Read TLE data and create satellite objects
+
+# Define time range and interval
+start_time = datetime.datetime.now()
+end_time = start_time + datetime.timedelta(days=1)
+time_interval = datetime.timedelta(minutes=1)
+
+# Print header
+print("Time, Latitude, Longitude, Altitude")
+
+# Propagate, convert, and print satellite positions
+current_time = start_time
+while current_time <= end_time:
+    output = current_time.strftime('%Y-%m-%d %H:%M:%S')
+    for satellite in satellites:
+        position, velocity = satellite.propagate(
+            current_time.year,
+            current_time.month,
+            current_time.day,
+            current_time.hour,
+            current_time.minute,
+            current_time.second
+        )
+        lat, lon, alt = ecef_to_lla(position[0], position[1], position[2])
+        output += f", {lat:.4f}, {lon:.4f}, {alt:.4f}"
+    print(output)
+    current_time += time_interval
 
 
 
