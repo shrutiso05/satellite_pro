@@ -3,7 +3,7 @@ from sgp4.earth_gravity import wgs84
 from sgp4.io import twoline2rv
 
 # Read TLE data from the file
-tle_file_path = '30sate.txt'
+tle_file_path = '3000sate.txt'
 with open(tle_file_path, 'r') as tle_file:
     tle_lines = tle_file.readlines()
 
