@@ -6,7 +6,7 @@ converting the positions to latitude, longitude, and altitude (LLA) format,
 and filtering the satellite data based on user-defined geographic regions.
 The code is optimized for performance to handle a large number of satellites efficiently.
 
-#How to Run the Code:
+# How to Run the Code:
 1. Clone the Git repository to your local machine:
       git clone <repository-url>
       
@@ -22,11 +22,11 @@ The code is optimized for performance to handle a large number of satellites eff
      python main.py --tle-file <tle-file-path> --lat1 <lat1> --lon1 <lon1> --lat2 <lat2> --lon2 <lon2>
      Replace <tle-file-path>, <lat1>, <lon1>, <lat2>, and <lon2> with your specific values.
 
-Dependencies
+# Dependencies
     sgp4: Used for satellite position calculations.
     pyproj: Used for coordinate transformations.
     
-Code Structure:
+# Code Structure:
 
 1. satellite_location.py: This code structure includes functions for parsing TLE data, calculating satellite positions, and converting coordinates to LLA format.
   The if __name__ == "__main__": block demonstrates example usage of these functions. 
@@ -49,3 +49,5 @@ Code Structure:
 
 3 Feel free to customize the code and adapt it to your specific requirements or integrate it into a larger system.
 
+
+and Thank you
