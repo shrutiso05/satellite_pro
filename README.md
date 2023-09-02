@@ -32,13 +32,11 @@ The code is optimized for performance to handle a large number of satellites eff
   The if __name__ == "__main__": block demonstrates example usage of these functions. 
   Replace "tle_data.txt" with your actual TLE data file and adjust the start_time, end_time, and interval_minutes as needed.
 
-2. The code you provided is split into two parts: the first part calculates and prints satellite positions in ECEF (Earth-Centered,Earth-Fixed) coordinates along with velocities,
-    while the second part converts these coordinates to latitude, longitude, and altitude (LLA) format and prints them.
-   Both parts share the same code for reading TLE data and defining the time range and interval. This code first calculates and prints satellite positions in ECEF coordinates
-    along with velocities, and then it defines a function ecef_to_lla to convert these ECEF coordinates to LLA format and prints them.Both parts share the same TLE data loading, time range, and interval definitions.
+2. The code you provided is split into two parts: the first part calculates and prints satellite positions in ECEF (Earth-Centered,Earth-Fixed) coordinates along with velocities,while the second part converts these coordinates to latitude, longitude, and altitude (LLA) format and prints them.  Both parts share the same code for readin TLE data and defining the time range and interval. This code first calculates and prints satellite positions in ECEF coordinates along with velocities, and then it defines a function ecef_to_lla to convert these ECEF coordinates to LLA format and prints them.Both parts share the same TLE data loading, time range, and interval definitions.
 
-3.In this section, we'll demonstrate how to use Python with the `geopy` library to filter a list of points based on whether they fall within a user-defined rectangle. This can be useful for spatial analysis and geospatial applications.
-    Before you begin, ensure you have the `geopy` library installed. You can install it using pip:
+3.In this section, we'll demonstrate how to use Python with the `geopy` library to filter a list of points based on whether they fall within a user-defined rectangle. 
+ This can be useful for spatial analysis and geospatial applications. Before you begin, ensure you have the `geopy` library installed. You can install it using pip:
+    
       pip install geopy
 
 
